@@ -19,6 +19,15 @@ Getting started
      module.exports = require("./main.mjs").default
      ```
 
+Create custom ESM loaders:
+
+```js
+// Pass an options object as the second argument to enforce settings for
+// subsequent loads or pass `true` to use the options from your package.json.
+const loader1 = require("@std/esm")(module, { cjs: true, esm: "js" })
+const loader2 = require("@std/esm")(module, true)
+```
+
 Enable ESM in the Node CLI by loading `@std/esm` with the [`-r` option](https://nodejs.org/api/cli.html#cli_r_require_module):
 
 ```shell
